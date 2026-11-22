@@ -1,6 +1,7 @@
 description: >-
   Evaluation mechanics for non-deterministic systems: framework
-  positioning, statistical gates, golden dataset lifecycle, the
-  production-trace feedback loop, evaluation-first development, and
-  the observation-not-verdict philosophy.
+  positioning, statistical gates and their statistics, LLM-as-judge
+  calibration, agent and trajectory evaluation, golden dataset
+  lifecycle, the production-trace feedback loop, evaluation-first
+  development, and the observation-not-verdict philosophy.
 binds_to_depth: main...
