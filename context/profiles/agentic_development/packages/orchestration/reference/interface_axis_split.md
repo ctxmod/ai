@@ -50,11 +50,10 @@ fail invisibly.
 This is the same division the agent protocols make — a vertical
 tool-boundary protocol and a horizontal client-boundary protocol, each with
 its own schema governance — applied at the UI layer. See
-`reference/orchestration/protocols-mcp-a2a.md` in this profile for the
+<ctxmod_link path="ctx:github.com/ctxmod/ai/context::shared::orchestration@agentic_development/reference/protocols_mcp_a2a.md" /> in this profile for the
 protocol-level version.
 
 ## Related
 
-- <ctxmod_link path="ctx:github.com/ctxmod/ai/context::shared::orchestration@agentic_development/reference/protocols_mcp_a2a.md" />
 - <ctxmod_link path="ctx:github.com/ctxmod/ai/context::shared::orchestration@agentic_development/reference/skills.md" />
 - <ctxmod_link path="ctx:github.com/ctxmod/ai/context::shared::evaluation@agentic_development/reference/observation_not_verdict.md" />

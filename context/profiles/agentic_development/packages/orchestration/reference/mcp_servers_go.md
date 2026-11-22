@@ -55,7 +55,7 @@ persist.
 Two concerns hook in here but are governed elsewhere, named in prose only:
 **telemetry** — a tool invocation should emit an AI-span with tool-selection
 and result attributes; the span semantics are this profile's
-(`reference/telemetry/`), while transport-level interceptor wiring is the Go
+(the `telemetry` package), while transport-level interceptor wiring is the Go
 services profile's concern. **Verification** — deterministic tool behavior
 is verified by external black-box test tools against the built server
 binary, not by tests inside the source package; the general testing split is

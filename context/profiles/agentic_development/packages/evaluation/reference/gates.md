@@ -45,10 +45,9 @@ Gates consume structured observations produced by evaluation runs; they never
 produce them. The observation record — a named question about a named subject
 at a named presentation — is the durable artifact, and the gate verdict is
 derived from it, recomputable at any time. See
-`reference/principles/observation-not-verdict.md` in this profile.
+<ctxmod_link path="ctx:github.com/ctxmod/ai/context::shared::evaluation@agentic_development/reference/observation_not_verdict.md" /> in this profile.
 
 ## Related
 
 - <ctxmod_link path="ctx:github.com/ctxmod/ai/context::shared::evaluation@agentic_development/reference/frameworks.md" />
 - <ctxmod_link path="ctx:github.com/ctxmod/ai/context::shared::evaluation@agentic_development/reference/datasets.md" />
-- <ctxmod_link path="ctx:github.com/ctxmod/ai/context::shared::evaluation@agentic_development/reference/observation_not_verdict.md" />

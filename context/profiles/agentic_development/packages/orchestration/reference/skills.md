@@ -48,7 +48,7 @@ Because activation can be automatic, routing is itself a behavior under test:
 skill-selection precision — when a prompt calls for a capability, does the
 agent activate the right skill — is gated statistically over a scenario
 suite, not trusted by construction. See
-`reference/evaluation/gates.md` for the gate mechanics.
+<ctxmod_link path="ctx:github.com/ctxmod/ai/context::shared::evaluation@agentic_development/reference/gates.md" /> for the gate mechanics.
 
 ## Lifecycle
 
@@ -62,4 +62,3 @@ linger discoverable.
 
 - <ctxmod_link path="ctx:github.com/ctxmod/ai/context::shared::orchestration@agentic_development/reference/mcp_servers_go.md" />
 - <ctxmod_link path="ctx:github.com/ctxmod/ai/context::shared::orchestration@agentic_development/reference/protocols_mcp_a2a.md" />
-- <ctxmod_link path="ctx:github.com/ctxmod/ai/context::shared::evaluation@agentic_development/reference/gates.md" />
