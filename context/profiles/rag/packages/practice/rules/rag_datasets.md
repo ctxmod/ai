@@ -23,7 +23,10 @@ profile owns RAG-specific construction.
 
 Architecturally, keep chunking, retrieval, and generation as separated,
 independently testable stages, and treat chunking strategy as a decision
-evaluated against the contextual metrics — never an unmeasured default.
+evaluated against the contextual metrics — never an unmeasured default. The
+same holds for hybrid lexical + dense retrieval, chunk contextualization,
+reranking, and late interaction: each is adopted on its measured delta. Check
+first whether the corpus fits the context window outright.
 
 - construction sources, labeling, and adversarial RAG cases — <ctxmod_link path="ctx:github.com/ctxmod/ai/context::shared::practice@rag/reference/dataset_construction.md" />
-- stage separation, chunking criteria, and context assembly signals — <ctxmod_link path="ctx:github.com/ctxmod/ai/context::shared::practice@rag/reference/architecture.md" />
+- stage separation, chunking criteria, retrieval patterns, and context assembly signals — <ctxmod_link path="ctx:github.com/ctxmod/ai/context::shared::practice@rag/reference/architecture.md" />

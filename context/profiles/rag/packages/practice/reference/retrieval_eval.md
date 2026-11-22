@@ -34,13 +34,20 @@ against contextual recall and contextual precision:
   is its justification.
 - **Embedding / index choice** — swapped behind the same suite, so
   candidates are comparable on the pinned dataset version.
+- **Retriever composition** — dense only versus hybrid lexical + dense, and
+  chunk contextualization on or off; each is a measured delta, not an
+  assumed upgrade (see the architecture reference).
 
 ## Ranking quality signals
 
-Beyond recall/precision, track ranking-shaped observations —
-precision-at-k and reciprocal-rank-style measures over labeled cases — as
-observational metrics. They do not gate by themselves; they explain *why*
-contextual precision moved.
+When cases carry chunk-id labels, the label-based ranking metrics —
+recall@k, precision@k, MRR, nDCG@k (defined in the metrics reference) — are
+deterministic and judge-free, so recall@k at the k the pipeline actually
+passes on is a legitimate retrieval gate in its own right. The finer-grained
+ranking measures (MRR, nDCG) stay observational: they do not gate by
+themselves; they explain *why* recall or contextual precision moved. Where
+labels are claims rather than chunk ids, the LLM-judged contextual metrics
+remain the gate.
 
 ## Dataset coupling
 
@@ -55,3 +62,8 @@ valuable seeds: they arrive pre-paired.
 - <ctxmod_link path="ctx:github.com/ctxmod/ai/context::shared::practice@rag/reference/metrics.md" />
 - <ctxmod_link path="ctx:github.com/ctxmod/ai/context::shared::practice@rag/reference/dataset_construction.md" />
 - <ctxmod_link path="ctx:github.com/ctxmod/ai/context::shared::practice@rag/reference/architecture.md" />
+
+## Sources
+
+- https://www.anthropic.com/news/contextual-retrieval — retrieval configurations compared on recall@20 over labeled chunks (embeddings, hybrid with BM25, contextualization, reranking), 2024-09-19, accessed 2026-11-22
+- https://docs.ragas.io/en/latest/concepts/metrics/available_metrics/context_precision/ — id-based and LLM-based context precision variants, accessed 2026-11-22
