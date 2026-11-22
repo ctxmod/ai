@@ -42,10 +42,11 @@ role is **retrieval and generation correctness**. The current line is 0.4.x
 (0.4.4, November 2026) — there is no 1.0 yet. Use its collections API
 (`ragas.metrics.collections`) and the `@experiment` runner: the legacy
 `ragas.metrics` classes are deprecated in 0.4 and scheduled for removal in
-1.0, `evaluate()` is deprecated, and some names changed (for example context
-precision split into `ContextPrecisionWithReference` and
-`ContextPrecisionWithoutReference`). New suites import only collections
-metrics.
+1.0, and `evaluate()` is deprecated. Names do not map one-for-one —
+context precision, for one, has reference-based, reference-free, and
+ID-based variants under different class names — so migrate from the
+project's migration table, not by renaming imports. New suites import only
+collections metrics.
 
 ## Choosing is matching, not ranking
 
@@ -91,3 +92,4 @@ control.
 - https://github.com/promptfoo/promptfoo — "remains open source and MIT licensed", accessed 2026-11-22
 - https://github.com/explodinggradients/ragas/releases — RAGAS 0.4.4 latest, collections migration across 0.3.8–0.4.2, legacy metrics deprecated, accessed 2026-11-22
 - https://docs.ragas.io/en/latest/howtos/migrations/migrate_from_v03_to_v04/ — collections import path, `@experiment`, deprecated `evaluate()`, renamed metrics, accessed 2026-11-22
+- https://docs.ragas.io/en/latest/concepts/metrics/available_metrics/context_precision/ — context precision variants and class names; legacy API deprecated in 0.4 and removed in 1.0, accessed 2026-11-22
