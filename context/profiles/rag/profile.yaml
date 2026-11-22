@@ -1,5 +1,15 @@
 title: Retrieval-Augmented Generation
 description: >-
-  RAG-specific practice layered on agentic_development's evaluation
-  package: architecture, dataset construction, retrieval evaluation,
-  and metrics.
+  Retrieval-augmented generation specifics: the RAG metric layer
+  (faithfulness, answer relevancy, contextual recall and precision),
+  retrieval quality evaluation, golden dataset construction from
+  production traces, and RAG architecture criteria. Extends
+  agentic_development, which owns the evaluation mechanics (runners,
+  statistical gate semantics, golden dataset lifecycle, the trace →
+  dataset → eval loop); the RAG references cross-name it and never
+  restate its machinery.
+extends:
+  - github.com/ctxmod/ai/context/profiles/agentic_development
+packages:
+  add:
+    - practice

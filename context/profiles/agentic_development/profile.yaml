@@ -1,6 +1,15 @@
 title: Agentic Development
 description: >-
-  Building and operating AI agents: evaluation (datasets, frameworks,
-  gates, feedback loops), orchestration (runtimes, skills, MCP
-  servers, MCP and A2A protocols), and telemetry (OpenTelemetry
-  GenAI, OpenInference, platforms).
+  Principles for developing AI software and non-deterministic systems:
+  evaluation mechanics (framework positioning, statistical gates, golden
+  datasets, the trace → dataset → eval loop), agent orchestration (base
+  tools versus dynamic skills, protocol selection, runtimes, tool-server
+  development), AI telemetry semantics, and the general AI development
+  principles (evaluation first, observation not verdict, the interface
+  axis split). Owns all evaluation machinery; the rag profile owns only
+  RAG-specific metrics and criteria.
+packages:
+  defaults:
+    - evaluation
+    - orchestration
+    - telemetry

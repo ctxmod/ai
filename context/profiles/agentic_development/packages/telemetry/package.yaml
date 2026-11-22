@@ -1,0 +1,5 @@
+description: >-
+  AI telemetry: OpenTelemetry core versus the GenAI semantic
+  conventions versus OpenInference, and the observability platform
+  landscape.
+binds_to_depth: main...
