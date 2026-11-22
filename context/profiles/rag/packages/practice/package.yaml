@@ -1,0 +1,5 @@
+description: >-
+  RAG architecture criteria, golden dataset construction from
+  production traces, retrieval quality evaluation, and the RAG metric
+  layer.
+binds_to_depth: main...

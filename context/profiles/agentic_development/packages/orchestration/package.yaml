@@ -1,0 +1,6 @@
+description: >-
+  Agent orchestration: skills and the dynamic tool surface, the
+  agent-to-tools versus client-to-agent protocol division (MCP, A2A),
+  runtimes, tool-protocol server development in Go, and the interface
+  axis split.
+binds_to_depth: main...
