@@ -1,0 +1,6 @@
+title: Agentic Development
+description: >-
+  Building and operating AI agents: evaluation (datasets, frameworks,
+  gates, feedback loops), orchestration (runtimes, skills, MCP
+  servers, MCP and A2A protocols), and telemetry (OpenTelemetry
+  GenAI, OpenInference, platforms).

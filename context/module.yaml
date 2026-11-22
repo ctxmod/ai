@@ -1,0 +1,12 @@
+title: AI Development
+description: >-
+  Evaluation-first development of non-deterministic systems:
+  evaluation datasets, gates and feedback loops; agent orchestration,
+  runtimes, skills, and MCP/A2A protocol selection; AI telemetry
+  (OpenTelemetry GenAI, OpenInference); and retrieval-augmented
+  generation practice.
+path: github.com/ctxmod/ai/context
+requires:
+  - github.com/ctxmod/engineering/context
+default_profiles:
+  - agentic_development

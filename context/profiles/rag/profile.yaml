@@ -1,0 +1,5 @@
+title: Retrieval-Augmented Generation
+description: >-
+  RAG-specific practice layered on agentic_development's evaluation
+  package: architecture, dataset construction, retrieval evaluation,
+  and metrics.
