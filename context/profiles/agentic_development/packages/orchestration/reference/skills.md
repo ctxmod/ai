@@ -26,19 +26,43 @@ Each skill is a descriptor package with three parts:
 1. **Identity metadata** — id, name, description, and the tool names it
    provides, exposed through the standard capability-discovery surface of
    the agent protocol.
-2. **Injected instructions** — domain rules spliced into the system prompt on
+2. **Injected instructions** — domain rules spliced into the context on
    activation: the heuristics, constraints, and procedures the model should
    follow for this capability.
 3. **Mounted tool schemas** — the tool-protocol servers (and their tool
-   schemas) registered into the session for the skill's duration.
+   schemas) the runtime exposes to the model for the skill's duration.
 
 The descriptor pattern is what makes skills auditable and testable units:
 a skill is data plus servers, inspectable before it ever runs.
 
+### The open skill format
+
+The Agent Skills format (agentskills.io) is the portable shape of parts 1 and
+2: a skill is a directory whose `SKILL.md` carries YAML frontmatter — a
+required `name` (lowercase, hyphenated, matching the directory) and a required
+`description` that says both what the skill does and **when to use it** —
+followed by Markdown instructions, with optional `scripts/`, `references/`,
+and `assets/` beside it. Author instruction-bearing skills in that format
+rather than a bespoke one, so they move between runtimes that read it. The
+description is routing surface exactly like a tool description: vague
+descriptions are the commonest cause of missed activations.
+
+### Mounting is a runtime decision
+
+Under MCP 2026-07-28 a tool server's list does not vary per connection, so
+"mounting a skill's tools" means the **runtime** chooses which tools of which
+servers enter the model's context for this session — the server is unaware
+of skills. Keep that choice in the runtime's mounting layer, keyed by the
+active skill set, and keep tool servers' lists stable.
+
 ## Progressive disclosure
 
 Instructions and tools enter the context **only when relevant** — that is
-the whole mechanism. Progressive disclosure keeps the base session cheap and
+the whole mechanism. It has three levels: the metadata of every skill (name
+and description, on the order of a hundred tokens each) is always present;
+the full instructions load on activation (the open format recommends keeping
+them under about 5,000 tokens and 500 lines); bundled references, scripts,
+and assets load only when a step needs them. Progressive disclosure keeps the base session cheap and
 focused, and it is why skill boundaries must be genuine: a skill that needs
 to be mounted "just in case" is a base tool that has not admitted it yet.
 
@@ -62,3 +86,8 @@ linger discoverable.
 
 - <ctxmod_link path="ctx:github.com/ctxmod/ai/context::shared::orchestration@agentic_development/reference/mcp_servers_go.md" />
 - <ctxmod_link path="ctx:github.com/ctxmod/ai/context::shared::orchestration@agentic_development/reference/protocols_mcp_a2a.md" />
+
+## Sources
+
+- https://agentskills.io/specification — Agent Skills format: `SKILL.md` frontmatter (`name`, `description`, optional `license`, `compatibility`, `metadata`, experimental `allowed-tools`), optional directories, three-level progressive disclosure, accessed 2026-11-22
+- https://modelcontextprotocol.io/specification/2026-07-28/changelog — list endpoints no longer vary per connection (SEP-2567), accessed 2026-11-22
