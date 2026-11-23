@@ -20,8 +20,11 @@ capability ships as skill bundles mounted on demand — each a self-contained
 descriptor carrying identity metadata, injected domain instructions, and the
 tool schemas it registers into the session.
 
-Activation is intent-detected or user-toggled, and activation events are
-surfaced to the caller. Skill-routing precision is itself evaluated as a
+Author instruction-bearing skills in the open Agent Skills format (`SKILL.md`
+with a `name` and a description that says when to use it), and mount a
+skill's tools in the runtime — tool servers keep stable, connection-independent
+lists. Activation is intent-detected or user-toggled, and activation events
+are surfaced to the caller. Skill-routing precision is itself evaluated as a
 statistical gate over a scenario suite — routing is not trusted by
 construction.
 

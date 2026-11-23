@@ -24,13 +24,13 @@ Whatever the language, a runtime answers the same five questions:
 
 ## A Python agent-SDK-style runtime as one example
 
-Python agent-SDK-style runtimes (Google ADK is the worked example) ship the
-patterns of this profile as first-class primitives: progressive disclosure
-via skill listing and loading, the A2A task lifecycle with
-`AgentCard`/`AgentSkill` capability discovery, and native tool-protocol
-client support for mounting external tool servers. They are illustrative of
-the shape — an ecosystem example, not an endorsement over other runtimes
-with equivalent surfaces.
+Python agent-SDK-style runtimes (Google ADK is the worked example; it also
+ships Java, Go, TypeScript, and Kotlin editions) ship the patterns of this
+profile as first-class primitives: progressive disclosure via skill listing
+and loading, the A2A task lifecycle with `AgentCard`/`AgentSkill` capability
+discovery, and native tool-protocol client support for mounting external
+tool servers. They are illustrative of the shape — an ecosystem example, not
+an endorsement over other runtimes with equivalent surfaces.
 
 ## Hosted model access
 
@@ -48,8 +48,12 @@ When choosing a runtime, score it against the patterns rather than the
 marketing:
 
 - protocol coverage: serves the client-boundary protocol and speaks the
-  tool-boundary protocol as a client;
-- dynamic mounting: per-session tool/skill attach and detach;
+  tool-boundary protocol as a client, at the current revisions (A2A 1.x, MCP
+  2026-07-28) while negotiating down for older peers;
+- dynamic mounting: per-session tool/skill attach and detach, done in the
+  runtime — the current MCP revision keeps server tool lists
+  connection-independent, so a runtime that relies on per-session server
+  lists is building on a removed feature;
 - observability hooks: span export through standard OTLP with the semantic
   layer this profile standardizes on;
 - evaluation fit: session replay or deterministic sampling enough to feed
@@ -65,3 +69,8 @@ A runtime missing a pattern is extendable; a runtime hostile to a pattern
 - <ctxmod_link path="ctx:github.com/ctxmod/ai/context::shared::orchestration@agentic_development/reference/protocols_mcp_a2a.md" />
 - <ctxmod_link path="ctx:github.com/ctxmod/ai/context::shared::orchestration@agentic_development/reference/skills.md" />
 - <ctxmod_link path="ctx:github.com/ctxmod/ai/context::shared::telemetry@agentic_development/reference/otel_genai.md" />
+
+## Sources
+
+- https://pypi.org/project/google-adk/ — ADK Python 2.15.0 (2026-11-20), A2A and MCP extras, links to the Java, Kotlin, Go, and TypeScript editions, accessed 2026-11-22
+- https://modelcontextprotocol.io/specification/2026-07-28/changelog — connection-independent list endpoints, accessed 2026-11-22

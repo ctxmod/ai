@@ -1,5 +1,6 @@
 description: >-
-  RAG architecture criteria, golden dataset construction from
-  production traces, retrieval quality evaluation, and the RAG metric
-  layer.
+  RAG architecture criteria and retrieval patterns (hybrid retrieval,
+  chunk contextualization, reranking, late interaction), golden dataset
+  construction from production traces, retrieval quality evaluation, and
+  the RAG metric layer including label-based ranking metrics.
 binds_to_depth: main...
